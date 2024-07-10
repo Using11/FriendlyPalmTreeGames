@@ -8,11 +8,15 @@ body{
 .textRight{
   text-align:right;
 }
+
 .flex{
   display:flex;
   justify-content:center;
 }
-#palm{
+.palm{
   width:300px;
   height:300px;
+}
+#mainHeading{
+  font-size:500%;
 }
