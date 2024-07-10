@@ -47,7 +47,7 @@ var gameCanvas = {
     this.context = this.canvas.getContext("2d");
     this.animation = paint();
     updateGame();
-    this.addEventListener("keydown", function(event){
+    window.addEventListener("keydown", function(event){
       gameCanvas.key = event.key
       if(gameCanvas.key === "ArrowLeft"){
         keys.left = true;
@@ -62,7 +62,7 @@ var gameCanvas = {
         keys.down = true;
       }
     });    
-    this.addEventListener("keyup", function(event){
+    window.addEventListener("keyup", function(event){
       gameCanvas.key = event.key
       if(gameCanvas.key === "ArrowLeft"){
         keys.left = false;
@@ -108,7 +108,7 @@ class component{
     context.fillStyle = this.color;
     context.strokeStyle = "black";
     context.lineWidth = 2;
-    if(this.rectBool){
+    if(this.rectBool == true){
       context.fillRect(this.x,this.y,this.width,this.height);
       context.strokeRect(this.x,this.y,this.width,this.height);
     }
