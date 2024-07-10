@@ -2,7 +2,7 @@ Initial development start: 6/9/24
 Last major release: 6/9/24
 
 Current update: 0.0.1-pre-alpha
-Update notes: Started new game, "Coin Rush"
+Update notes: Started new game, "Coin Rush", Fixed Main site display
 
 Past updates:
 0.0.0-pre-alpha: Creation of "FriendlyPalmTreeGames", Main site created (more details to be added)
