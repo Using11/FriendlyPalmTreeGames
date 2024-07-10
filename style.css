@@ -10,6 +10,7 @@ body{
 }
 .flex{
   display:flex;
+  justify-content:center;
 }
 #palm{
   width:300px;
