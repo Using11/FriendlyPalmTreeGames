@@ -103,6 +103,8 @@ class component{
   }
   build(){
     var context = gameCanvas.canvas.getContext("2d");
+    context.fillStyle = "white";
+    context.fillRect(0,0,canvas.width,canvas.height);
     context.fillStyle = this.color;
     context.strokeStyle = "black";
     context.lineWidth = 2;
