@@ -128,4 +128,7 @@ function paint(){
 }
 
 var Canvas = document.getElementById("CoinRush");
+var CanvasContext = Canvas.getContext("2d");
+CanvasContext.fillStyle = "white";
+CanvasContext.fillRect(0,0,Canvas.width,Canvas.height);
 Canvas.addEventListener("click",startGame);
