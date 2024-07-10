@@ -2,7 +2,8 @@ body{
   text-align:center;
   font-family:Helvetica, sans-serif;
   background-color:rgb(125, 91, 12);
-  margin:3%;
+  margin-left:3%;
+  margin-right:3%;
 }
 .textLeft{
   text-align:left;
@@ -11,7 +12,7 @@ body{
   text-align:right;
 }
 .gameCanvas{
-  border: 1px solid black;
+  border:1px solid black;
 }
 .flex{
   display:flex;
