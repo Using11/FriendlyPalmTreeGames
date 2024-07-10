@@ -12,23 +12,31 @@ var keys = {
 }
 
 var startGame = function(){
+  character = new component(120,120,20,20,false,"rgb(255 0 0 / 100%)");
   gameCanvas.start();
 }
 
 var updateGame = function(){
   gameCanvas.clear();
-  if(keys.left){
+  if(keys.left || keys.right || keys.up || keys.down){
+    if(keys.left){
+      character.xMove--;
+    }
+    if(keys.right){
+      character.xMove++;
+    }
+    if(keys.up){
+      character.yMove--;
+    }
+    if(keys.down){
+      character.xMove++;
+    }
+  }
+  else{
     
   }
-  if(keys.right){
-    
-  }
-  if(keys.up){
-    
-  }
-  if(keys.down){
-    
-  }
+  character.move();
+  character.update();
   paint();
 }
 
@@ -75,11 +83,42 @@ var gameCanvas = {
 };
 
 class component{
-  constructor(){
-    
+  constructor(x,y,width,height,rectBool,color){
+    this.x = x;
+    this.y = y;
+    this.width = width;
+    this.height = height;
+    this.rectBool = rectBool;
+    this.color = color;
+    this.xMove = 0;
+    this.yMove = 0;
+    this.move = function(){
+      this.x += this.xMove;
+      this.y += this.yMove;
+    }
+    this.update = function(){
+      this.build();
+    } 
+  }
+  build(){
+    var context = gameCanvas.canvas.getContext("2d");
+    context.fillStyle = this.color;
+    context.strokeStyle = "black";
+    context.lineWidth = 2;
+    if(rectBool){
+      context.fillRect(this.x,this.y,this.width,this.height);
+      context.strokeRect(this.x,this.y,this.width,this.height);
+    }
+    else{
+      context.beginPath();
+      context.arc(x,y,width,height,360);
+      context.fill();
+      context.arc(x,y,width,height,360);
+      context.stroke();
+      context.closePath();
+    }
   }
 }
-
 
 function paint(){
   setTimeout(() => {
