@@ -2,6 +2,12 @@ body{
   text-align:center;
   font-family:Helvetica, sans-serif;
 }
+.textLeft{
+  text-align:left;
+}
+.textRight{
+  text-align:right;
+}
 .flex{
   display:flex;
 }
