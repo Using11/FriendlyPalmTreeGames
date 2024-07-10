@@ -13,7 +13,7 @@ var keys = {
 
 var startGame = function(){
   Canvas.removeEventListener("click",startGame);
-  character = new component(120,120,20,20,false,"rgb(255 0 0 / 100%)");
+  character = new component(120,120,20,20,true,"rgb(255 0 0 / 100%)");
   gameCanvas.start();
 }
 
@@ -30,7 +30,7 @@ var updateGame = function(){
       character.yMove--;
     }
     if(keys.down){
-      character.xMove++;
+      character.yMove++;
     }
   }
   else{
@@ -108,7 +108,7 @@ class component{
     context.fillStyle = this.color;
     context.strokeStyle = "black";
     context.lineWidth = 2;
-    if(this.rectBool == true){
+    if(this.rectBool){
       context.fillRect(this.x,this.y,this.width,this.height);
       context.strokeRect(this.x,this.y,this.width,this.height);
     }
