@@ -17,6 +17,6 @@ body{
   width:300px;
   height:300px;
 }
-#mainHeading{
+.mainHeading{
   font-size:500%;
 }
