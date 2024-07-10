@@ -12,6 +12,7 @@ var keys = {
 }
 
 var startGame = function(){
+  Canvas.removeEventListener("click",startGame);
   character = new component(120,120,20,20,false,"rgb(255 0 0 / 100%)");
   gameCanvas.start();
 }
@@ -125,3 +126,6 @@ function paint(){
     requestAnimationFrame(updateGame);
   }, 1000 / 30);
 }
+
+var Canvas = document.getElementById("CoinRush");
+Canvas.addEventListener("click",startGame);
