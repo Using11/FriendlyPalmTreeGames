@@ -2,7 +2,7 @@ body{
   text-align:center;
   font-family:Helvetica, sans-serif;
   background-color:rgb(125, 91, 12);
-  margin:1%;
+  margin:3%;
 }
 .textLeft{
   text-align:left;
@@ -20,6 +20,7 @@ body{
 .palm{
   width:300px;
   height:300px;
+  border:2px solid black;
 }
 .mainHeading{
   font-size:500%;
