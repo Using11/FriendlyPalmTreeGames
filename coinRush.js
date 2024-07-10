@@ -44,7 +44,7 @@ var updateGame = function(){
 var gameCanvas = {
   canvas : document.getElementById("CoinRush"),
   start : function(){
-    this.context = canvas.getContext("2d");
+    this.context = this.canvas.getContext("2d");
     this.animation = paint();
     updateGame();
     this.addEventListener("keydown", function(event){
