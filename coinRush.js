@@ -112,9 +112,9 @@ class component{
     }
     else{
       context.beginPath();
-      context.arc(x,y,width,height,360);
+      context.arc(this.x,this.y,this.width,this.height,360);
       context.fill();
-      context.arc(x,y,width,height,360);
+      context.arc(this.x,this.y,this.width,this.height,360);
       context.stroke();
       context.closePath();
     }
