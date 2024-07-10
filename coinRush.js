@@ -106,7 +106,7 @@ class component{
     context.fillStyle = this.color;
     context.strokeStyle = "black";
     context.lineWidth = 2;
-    if(rectBool){
+    if(this.rectBool){
       context.fillRect(this.x,this.y,this.width,this.height);
       context.strokeRect(this.x,this.y,this.width,this.height);
     }
