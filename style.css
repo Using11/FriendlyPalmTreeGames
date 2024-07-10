@@ -1,6 +1,8 @@
 body{
   text-align:center;
   font-family:Helvetica, sans-serif;
+  background-color:rgb(125, 91, 12);
+  margin:1%;
 }
 .textLeft{
   text-align:left;
