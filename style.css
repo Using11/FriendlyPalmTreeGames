@@ -8,7 +8,9 @@ body{
 .textRight{
   text-align:right;
 }
-
+#gameCanvas{
+  border: 1px solid black;
+}
 .flex{
   display:flex;
   justify-content:center;
