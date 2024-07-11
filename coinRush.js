@@ -152,10 +152,12 @@ function intro(){
   CanvasContext.textAlign = "center";
   CanvasContext.font = "45px Arial";
   CanvasContext.fillText("Coin Rush",450,75);
-  CanvasContext.fillText("Coin Rush",450,75);
-  CanvasContext.fillText("Coin Rush",450,75);
-  CanvasContext.fillText("Coin Rush",450,75);
-  CanvasContext.fillText("Coin Rush",450,75);
+  CanvasContext.fillText("Coin Rush",165,230);
+  CanvasContext.fillText("Coin Rush",450,230);
+  CanvasContext.fillText("Coin Rush",635,230);
+  CanvasContext.fillText("Coin Rush",165,435);
+  CanvasContext.fillText("Coin Rush",450,435);
+  CanvasContext.fillText("Coin Rush",635,435);
   Canvas.addEventListener("click",startGame);
 }
 
