@@ -108,8 +108,6 @@ class component{
   }
   build(){
     var context = gameCanvas.canvas.getContext("2d");
-    context.fillStyle = "white";
-    context.fillRect(0,0,gameCanvas.canvas.width,gameCanvas.canvas.height);
     context.fillStyle = this.color;
     context.strokeStyle = "black";
     context.lineWidth = 2;
@@ -139,11 +137,8 @@ var CanvasRect = Canvas.getBoundingClientRect();
 var CanvasContext = Canvas.getContext("2d");
 
 function intro(){
-  function homepage(event){
+  function homepage(){
     var numOfEvent = 0;
-    CanvasContext.globalAlpha = 1;
-    CanvasContext.fillStyle = "white";
-    CanvasContext.fillRect(0,0,Canvas.width,Canvas.height);
     CanvasContext.strokeStyle = "black";
     CanvasContext.strokeRect(45,150,240,160);
     CanvasContext.strokeRect(330,150,240,160);
@@ -174,6 +169,12 @@ function intro(){
       else if(event.clientX - CanvasRect.left >= 615 && event.clientX - CanvasRect.left <= 855 && event.clientY - CanvasRect.top >= 150 && event.clientY - CanvasRect.top <= 310){
         timer = 300;
         startGame();
+      }
+      else if(event.clientX - CanvasRect.left >= 45 && event.clientX - CanvasRect.left <= 285 && event.clientY - CanvasRect.top >= 355 && event.clientY - CanvasRect.top <= 515){
+        credits();
+      }
+      else if(event.clientX - CanvasRect.left >= 330 && event.clientX - CanvasRect.left <= 570 && event.clientY - CanvasRect.top >= 355 && event.clientY - CanvasRect.top <= 515){
+        instructions();
       }
     });
   }
