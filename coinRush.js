@@ -77,6 +77,11 @@ var gameCanvas = {
         keys.down = false;
       }
     });
+    window.addEventListener("keydown", function(e) {
+      if(["ArrowUp","ArrowDown","ArrowLeft","ArrowRight"].indexOf(e.code) > -1) {
+        e.preventDefault();
+      }
+    }, false);
   },
   clear : function(){
     this.context.clearRect(0,0,this.canvas.width,this.canvas.height);
