@@ -162,16 +162,11 @@ function intro(){
     CanvasContext.fillText("Credits",165,435);
     CanvasContext.fillText("Instructions",450,435);
     //CanvasContext.fillText(":)",735,435); Additional 6th button
-    if((event.clientX - CanvasRect.left) && (event.clientY - CanvasRect.top)){
-      if(numOfEvent = 0){
-        Canvas.addEventListener("click",startGame);
+    Canvas.addEventListener("click",function(event){
+      if((event.clientX - CanvasRect.left) && (event.clientY - CanvasRect.top)){
+        startGame();
       }
-      numOfEvent = 1;
-    }
-    else{
-      Canvas.removeEventListener("click",startGame);
-      numOfEvent = 0;
-    }
+    });
   }
   function credits(event){
     
