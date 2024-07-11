@@ -142,12 +142,12 @@ function intro(){
   CanvasContext.fillStyle = "white";
   CanvasContext.fillRect(0,0,Canvas.width,Canvas.height);
   CanvasContext.strokeStyle = "black";
-  CanvasContext.strokeRect(30,150,240,160);
+  CanvasContext.strokeRect(45,150,240,160);
   CanvasContext.strokeRect(330,150,240,160);
-  CanvasContext.strokeRect(630,150,240,160);
-  CanvasContext.strokeRect(30,150,240,160);
-  CanvasContext.strokeRect(330,150,240,160);
-  CanvasContext.strokeRect(630,150,240,160);
+  CanvasContext.strokeRect(615,150,240,160);
+  CanvasContext.strokeRect(45,355,240,160);
+  CanvasContext.strokeRect(330,355,240,160);
+  CanvasContext.strokeRect(615,355,240,160);
   CanvasContext.fillStyle = "black";
   CanvasContext.textAlign = "center";
   CanvasContext.font = "45px Arial";
