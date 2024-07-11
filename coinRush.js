@@ -184,7 +184,11 @@ function intro(){
     function creditsAdvance(event){
       Canvas.removeEventListener("click", creditsAdvance);
     }
-    Canvas.addEventListener("click", creditsAdvance);
+    CanvasContext.strokeRect(330,500,240,160);
+    CanvasContext.fillStyle = "black";
+    CanvasContext.textAlign = "center";
+    CanvasContext.textBaseline = "middle";
+    CanvasContext.addEventListener("click", creditsAdvance);
   }
   function instructions(){
     function instructionsAdvance(event){
