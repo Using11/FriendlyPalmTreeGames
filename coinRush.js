@@ -138,7 +138,8 @@ var Canvas = document.getElementById("CoinRush");
 var CanvasContext = Canvas.getContext("2d");
 
 function intro(){
-  function homepage(){
+  function homepage(event){
+    var numOfEvent = 0;
     CanvasContext.globalAlpha = 1;
     CanvasContext.fillStyle = "white";
     CanvasContext.fillRect(0,0,Canvas.width,Canvas.height);
@@ -160,12 +161,21 @@ function intro(){
     CanvasContext.fillText("Credits",165,435);
     CanvasContext.fillText("Instructions",450,435);
     //CanvasContext.fillText(":)",735,435); Additional 6th button
-    Canvas.addEventListener("click",startGame);
+    if((event.clientX) && (event.clientY)){
+      if(numOfEvent = 0){
+        Canvas.addEventListener("click",startGame);
+      }
+      numOfEvent = 1;
+    }
+    else{
+      Canvas.removeEventListener("click",startGame);
+      numOfEvent = 0;
+    }
   }
-  function credits(){
+  function credits(event){
     
   }
-  function instructions(){
+  function instructions(event){
     
   }
   homepage();
