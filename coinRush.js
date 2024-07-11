@@ -139,7 +139,7 @@ var CanvasContext = Canvas.getContext("2d");
 CanvasContext.fillStyle = "white";
 CanvasContext.fillRect(0,0,Canvas.width,Canvas.height);
 CanvasContext.strokeStyle = "black";
-CanvasContext.strokeRect(0,0,150,100);
+CanvasContext.strokeRect(0,0,350,175);
 CanvasContext.strokeRect(0,0,150,100);
 CanvasContext.strokeRect(0,0,150,100);
 CanvasContext.strokeRect(0,0,150,100);
