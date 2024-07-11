@@ -163,7 +163,7 @@ function intro(){
     CanvasContext.fillText("Instructions",450,435);
     //CanvasContext.fillText(":)",735,435); Additional 6th button
     Canvas.addEventListener("click",function(event){
-      if((event.clientX - CanvasRect.left) && (event.clientY - CanvasRect.top)){
+      if(event.clientX - CanvasRect.left >= 45 && event.clientX - CanvasRect.left <= 295 && event.clientY - CanvasRect.top >= 150 && event.clientY - CanvasRect.top <= 310){
         startGame();
       }
     });
