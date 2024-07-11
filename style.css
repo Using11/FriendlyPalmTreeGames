@@ -5,6 +5,9 @@ body{
   margin-left:3%;
   margin-right:3%;
 }
+canvas{
+  background-color:white;
+}
 .textLeft{
   text-align:left;
 }
