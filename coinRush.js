@@ -180,11 +180,17 @@ function intro(){
     //CanvasContext.fillText(":)",735,435); Additional 6th button
     Canvas.addEventListener("click",homepageAdvance);
   }
-  function credits(event){
-    
+  function credits(){
+    function creditsAdvance(event){
+      Canvas.removeEventListener("click", creditsAdvance);
+    }
+    Canvas.addEventListener("click", creditsAdvance);
   }
-  function instructions(event){
-    
+  function instructions(){
+    function instructionsAdvance(event){
+      Canvas.removeEventListener("click", instructionsAdvance);
+    }
+    Canvas.addEventListener("click", instructionsAdvance);
   }
   homepage();
 }
