@@ -138,28 +138,37 @@ var Canvas = document.getElementById("CoinRush");
 var CanvasContext = Canvas.getContext("2d");
 
 function intro(){
-  CanvasContext.globalAlpha = 1;
-  CanvasContext.fillStyle = "white";
-  CanvasContext.fillRect(0,0,Canvas.width,Canvas.height);
-  CanvasContext.strokeStyle = "black";
-  CanvasContext.strokeRect(45,150,240,160);
-  CanvasContext.strokeRect(330,150,240,160);
-  CanvasContext.strokeRect(615,150,240,160);
-  CanvasContext.strokeRect(45,355,240,160);
-  CanvasContext.strokeRect(330,355,240,160);
-  CanvasContext.strokeRect(615,355,240,160);
-  CanvasContext.fillStyle = "black";
-  CanvasContext.textAlign = "center";
-  CanvasContext.font = "45px Arial";
-  CanvasContext.fillText("Coin Rush",450,75);
-  CanvasContext.textBaseline = "middle";
-  CanvasContext.fillText("Coin Rush",165,230);
-  CanvasContext.fillText("Coin Rush",450,230);
-  CanvasContext.fillText("Coin Rush",735,230);
-  CanvasContext.fillText("Coin Rush",165,435);
-  CanvasContext.fillText("Coin Rush",450,435);
-  CanvasContext.fillText("Coin Rush",735,435);
-  Canvas.addEventListener("click",startGame);
+  function homepage(){
+    CanvasContext.globalAlpha = 1;
+    CanvasContext.fillStyle = "white";
+    CanvasContext.fillRect(0,0,Canvas.width,Canvas.height);
+    CanvasContext.strokeStyle = "black";
+    CanvasContext.strokeRect(45,150,240,160);
+    CanvasContext.strokeRect(330,150,240,160);
+    CanvasContext.strokeRect(615,150,240,160);
+    CanvasContext.strokeRect(45,355,240,160);
+    CanvasContext.strokeRect(330,355,240,160);
+    //CanvasContext.strokeRect(615,355,240,160); Additional 6th button
+    CanvasContext.fillStyle = "black";
+    CanvasContext.textAlign = "center";
+    CanvasContext.font = "45px Arial";
+    CanvasContext.fillText("Coin Rush",450,75);
+    CanvasContext.textBaseline = "middle";
+    CanvasContext.fillText("20s timer",165,230);
+    CanvasContext.fillText("1m timer",450,230);
+    CanvasContext.fillText("5m timer",735,230);
+    CanvasContext.fillText("Credits",165,435);
+    CanvasContext.fillText("Instructions",450,435);
+    //CanvasContext.fillText(":)",735,435); Additional 6th button
+    Canvas.addEventListener("click",startGame);
+  }
+  function credits(){
+    
+  }
+  function instructions(){
+    
+  }
+  homepage();
 }
 
 intro();
