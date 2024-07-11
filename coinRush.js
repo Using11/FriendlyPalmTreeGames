@@ -159,3 +159,4 @@ function intro(){
   Canvas.addEventListener("click",startGame);
 }
 
+intro();
