@@ -136,13 +136,14 @@ function paint(){
 
 var Canvas = document.getElementById("CoinRush");
 var CanvasContext = Canvas.getContext("2d");
+CanvasContext.globalAlpha = 1;
 CanvasContext.fillStyle = "white";
 CanvasContext.fillRect(0,0,Canvas.width,Canvas.height);
 CanvasContext.strokeStyle = "black";
 CanvasContext.strokeRect(0,0,240,160);
-CanvasContext.strokeRect(0,0,150,100);
-CanvasContext.strokeRect(0,0,150,100);
-CanvasContext.strokeRect(0,0,150,100);
+CanvasContext.strokeRect(0,0,240,160);
+CanvasContext.strokeRect(0,0,240,160);
+CanvasContext.strokeRect(0,0,240,160);
 CanvasContext.fillStyle = "black";
 CanvasContext.textAlign = "center";
 CanvasContext.font = "35px Arial";
