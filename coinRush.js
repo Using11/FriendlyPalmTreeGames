@@ -135,7 +135,7 @@ function paint(){
 }
 
 var Canvas = document.getElementById("CoinRush");
-var CanvasRect = Canvas.getBoundlingClientRect();
+var CanvasRect = Canvas.getBoundingClientRect();
 var CanvasContext = Canvas.getContext("2d");
 
 function intro(){
