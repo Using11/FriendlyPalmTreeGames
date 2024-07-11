@@ -140,7 +140,7 @@ CanvasContext.globalAlpha = 1;
 CanvasContext.fillStyle = "white";
 CanvasContext.fillRect(0,0,Canvas.width,Canvas.height);
 CanvasContext.strokeStyle = "black";
-CanvasContext.strokeRect(0,0,240,160);
+CanvasContext.strokeRect(50,200,240,160);
 CanvasContext.strokeRect(0,0,240,160);
 CanvasContext.strokeRect(0,0,240,160);
 CanvasContext.strokeRect(0,0,240,160);
