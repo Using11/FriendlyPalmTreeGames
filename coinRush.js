@@ -5,10 +5,8 @@ var timer;
 var timeLeft;
 var score;
 var coinsCollected;
-var scoreHTML = document.createElement("p");
-scoreHTML.textContent = "Score: " + score;
-var timerHTML = document.createElement("p");
-timerHTML.textContent = "Time remaining: " + timer;
+var scoreHTML = document.createElement("h3");
+var timerHTML = document.createElement("h3");
 
 var keys = {
   left : false,
@@ -20,6 +18,8 @@ var keys = {
 var startGame = function(){
   score = 0;
   coinsCollected = 0;
+  scoreHTML.textContent = "Score: " + score;
+  timerHTML.textContent = "Time remaining: " + timer;
   document.body.appendChild(scoreHTML);
   document.body.appendChild(timerHTML);
   Canvas.removeEventListener("click",startGame);
@@ -32,6 +32,8 @@ var startGame = function(){
 
 var updateGame = function(){
   gameCanvas.clear();
+  scoreHTML.textContent = "Score: " + score;
+  timerHTML.textContent = "Time remaining: " + timer;
   nowTime = new Date().getTime();
   timeLeft = nowTime - startTime;
   timeLeft /= 1000;
