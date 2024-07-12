@@ -125,7 +125,7 @@ class component{
     this.xMove = 0;
     this.yMove = 0;
     this.touchingCoin = function(){
-      if(Math.abs(this.x - coin.x) <= 10 && Math.abs(this.y - coin.y) <= 10){
+      if((this.x + 30 > coin.x || this.x - 10 < coin.x)){
         score++;
         console.log(score);
       }
