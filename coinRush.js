@@ -160,6 +160,9 @@ function intro(){
       else if(event.clientX - CanvasRect.left >= 330 && event.clientX - CanvasRect.left <= 570 && event.clientY - CanvasRect.top >= 355 && event.clientY - CanvasRect.top <= 515){
         instructions();
       }
+      else if(event.clientX - CanvasRect.left >= 615 && event.clientX - CanvasRect.left <= 855 && event.clientY - CanvasRect.top >= 355 && event.clientY - CanvasRect.top <= 515){
+        leaderboard();
+      }
       Canvas.removeEventListener("click",homepageAdvance);
     }
     CanvasContext.strokeRect(45,150,240,160);
@@ -167,7 +170,7 @@ function intro(){
     CanvasContext.strokeRect(615,150,240,160);
     CanvasContext.strokeRect(45,355,240,160);
     CanvasContext.strokeRect(330,355,240,160);
-    //CanvasContext.strokeRect(615,355,240,160); Additional 6th button
+    CanvasContext.strokeRect(615,355,240,160);
     CanvasContext.fillStyle = "black";
     CanvasContext.textAlign = "center";
     CanvasContext.font = "45px Arial";
@@ -178,7 +181,7 @@ function intro(){
     CanvasContext.fillText("5m timer",735,230);
     CanvasContext.fillText("Credits",165,435);
     CanvasContext.fillText("Instructions",450,435);
-    //CanvasContext.fillText(":)",735,435); Additional 6th button
+    CanvasContext.fillText("Leaderboard",735,435);
     Canvas.addEventListener("click",homepageAdvance);
   }
   function credits(){
@@ -192,7 +195,10 @@ function intro(){
     CanvasContext.strokeRect(330,395,240,160);
     CanvasContext.fillStyle = "black";
     CanvasContext.textAlign = "center";
+    CanvasContext.fillText("Credits:",450,75);
     CanvasContext.textBaseline = "middle";
+    CanvasContext.fillText("Using11 (creator / dev)",450,150);
+    CanvasContext.fillText("Github (platform)",450,225);
     Canvas.addEventListener("click", creditsAdvance);
   }
   function instructions(){
@@ -206,8 +212,29 @@ function intro(){
     CanvasContext.strokeRect(330,395,240,160);
     CanvasContext.fillStyle = "black";
     CanvasContext.textAlign = "center";
+    CanvasContext.fillText("Instructions:",450,75);
     CanvasContext.textBaseline = "middle";
+    CanvasContext.fillText("Use the arrow keys to move around your character",450,150);
+    CanvasContext.fillText("Collect as many coins as possible within the time limit",450,225);
+    CanvasContext.fillText("You can choose from 20 seconds, 1 minute, and 3 minute times",450,300);
+    CanvasContext.fillText("With enough coins, you can be featured on the leaderboard!",450,375);
     Canvas.addEventListener("click", instructionsAdvance);
+  }
+  function leaderboard(){
+    CanvasContext.clearRect(0,0,Canvas.width,Canvas.height);
+    function leaderboardAdvance(event){
+      if(event.clientX - CanvasRect.left >= 330 && event.clientX - CanvasRect.left <= 570 && event.clientY - CanvasRect.top >= 395 && event.clientY - CanvasRect.top <= 555){
+        homepage();
+      }
+      Canvas.removeEventListener("click", leaderboardAdvance);
+    }
+    CanvasContext.fillStyle = "black";
+    CanvasContext.textAlign = "center";
+    CanvasContext.fillText("Leaderboard:",450,75);
+    CanvasContext.textBaseline = "middle";
+    CanvasContext.fillText("Coming soon...",450,150);
+    CanvasContext.fillText("Submit your score to qualify!",450,225);
+    Canvas.addEventListener("click", leaderboardAdvance);
   }
   homepage();
 }
