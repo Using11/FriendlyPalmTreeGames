@@ -52,7 +52,8 @@ var updateGame = function(){
       }
     }
     else{
-      character.slowDown();
+      character.slowDownX();
+      character.slowDownY();
     }
     character.move();
     character.update();
@@ -125,8 +126,16 @@ class component{
       this.y += this.yMove;
     }
     this.slowDownX = function(){
-      this.xMove /= 0.7;
-      this.xMove = Math.round(this.xMove);
+      if(this.xMove > 0){
+        this.xMove /= 0.7;
+        this.xMove = Math.round(this.xMove);
+      }
+      else if(this.xMove < 0){
+        this.xMove *= -1;
+        this.xMove /= 0.7;
+        this.xMove = Math.round(this.xMove);
+        this.xMove *= -1;
+      }
     }
     this.slowDownY = function(){
       
