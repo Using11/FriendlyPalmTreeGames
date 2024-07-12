@@ -151,7 +151,7 @@ function intro(){
         startGame();
       }
       else if(event.clientX - CanvasRect.left >= 615 && event.clientX - CanvasRect.left <= 855 && event.clientY - CanvasRect.top >= 150 && event.clientY - CanvasRect.top <= 310){
-        timer = 300;
+        timer = 180;
         startGame();
       }
       else if(event.clientX - CanvasRect.left >= 45 && event.clientX - CanvasRect.left <= 285 && event.clientY - CanvasRect.top >= 355 && event.clientY - CanvasRect.top <= 515){
@@ -178,7 +178,7 @@ function intro(){
     CanvasContext.textBaseline = "middle";
     CanvasContext.fillText("20s timer",165,230);
     CanvasContext.fillText("1m timer",450,230);
-    CanvasContext.fillText("5m timer",735,230);
+    CanvasContext.fillText("3m timer",735,230);
     CanvasContext.fillText("Credits",165,435);
     CanvasContext.fillText("Instructions",450,435);
     CanvasContext.fillText("Leader",735,413);
