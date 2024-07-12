@@ -333,12 +333,24 @@ function intro(){
 }
 
 var endgame = function(){
-  Canvas.clearRect(0,0,Canvas.width,Canvas.height);
+  CanvasContext.clearRect(0,0,Canvas.width,Canvas.height);
+  function replay(event){
+    if(event.clientX - CanvasRect.left >= 330 && event.clientX - CanvasRect.left <= 570 && event.clientY - CanvasRect.top >= 395 && event.clientY - CanvasRect.top <= 555){
+      intro();
+    }
+    Canvas.removeEventListener("click", replay);
+  }
+  CanvasContext.strokeStyle = "black";
+  CanvasContext.fillStyle = "white";
+  CanvasContext.strokeRect(330,395,240,160);
   CanvasContext.textAlgin = "center";
   CanvasContext.fillStyle = "black";
   score = score / timer;
   CanvasContext.font = "45px Arial";
   CanvasContext.fillText("You collected " + score + " coins in " + timer + " seconds",450,75);
+  CanvasContext.textBaseline = "center";
+  CanvasContext.fillText("Back",450,475);
+  Canvas.addEventListener("click", replay);
 }
 
 intro();
