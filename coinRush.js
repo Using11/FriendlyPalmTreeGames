@@ -16,7 +16,7 @@ var startGame = function(){
   Canvas.removeEventListener("click",startGame);
   startTime = new Date().getTime();
   character = new component(120,120,20,20,true,"red");
-  coin = new component(200,200,15,15,false,"yellow");
+  coin = new component(200,200,10,10,false,"yellow");
   gameCanvas.start();
 }
 
@@ -57,6 +57,7 @@ var updateGame = function(){
     }
     character.move();
     character.wallHit();
+    character.touchingCoin();
     coin.update();
     character.update();
     paint();
@@ -123,6 +124,12 @@ class component{
     this.color = color;
     this.xMove = 0;
     this.yMove = 0;
+    this.touchingCoin = function(){
+      if(Math.abs(this.x - coin.x) <= 10 && Math.abs(this.y - coin.y) <= 10){
+        score++;
+        console.log(score);
+      }
+    }
     this.move = function(){
       this.x += this.xMove;
       this.y += this.yMove;
