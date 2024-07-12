@@ -21,7 +21,7 @@ var startGame = function(){
   score = 0;
   coinsCollected = 0;
   scoreHTML.textContent = "Score: " + score;
-  timeLeft = timer - timePassed
+  timeLeft = timer - timePassed;
   timerHTML.textContent = "Time remaining: " + timeLeft;
   document.body.insertBefore(scoreHTML, homeLink);
   document.body.insertBefore(timerHTML, homeLink);
@@ -35,8 +35,9 @@ var startGame = function(){
 
 var updateGame = function(){
   gameCanvas.clear();
+  timeLeft = timer - timePassed;
   scoreHTML.textContent = "Score: " + score;
-  timerHTML.textContent = "Time remaining: " + timer;
+  timerHTML.textContent = "Time remaining: " + timeLeft;
   nowTime = new Date().getTime();
   timePassed = nowTime - startTime;
   timePassed /= 1000;
