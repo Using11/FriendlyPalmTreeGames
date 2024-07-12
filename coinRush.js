@@ -127,13 +127,13 @@ class component{
     }
     this.slowDownX = function(){
       if(this.xMove > 0){
-        this.xMove /= 0.7;
-        this.xMove = Math.round(this.xMove);
+        this.xMove *= 0.7;
+        this.xMove = Math.floor(this.xMove);
       }
       else if(this.xMove < 0){
         this.xMove *= -1;
-        this.xMove /= 0.7;
-        this.xMove = Math.round(this.xMove);
+        this.xMove *= 0.7;
+        this.xMove = Math.ceil(this.xMove);
         this.xMove *= -1;
       }
     }
