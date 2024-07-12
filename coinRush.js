@@ -126,7 +126,7 @@ class component{
       this.x += this.xMove;
       this.y += this.yMove;
     }
-    this.wallHit(){
+    this.wallHit = function(){
       if(this.x < 0){
         this.x = 0;
         this.xMove = 0;
