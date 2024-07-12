@@ -3,6 +3,7 @@ var startTime;
 var nowTime;
 var timer;
 var timePassed;
+var timeLeft;
 var score;
 var coinsCollected;
 var scoreHTML = document.createElement("h2");
@@ -20,7 +21,8 @@ var startGame = function(){
   score = 0;
   coinsCollected = 0;
   scoreHTML.textContent = "Score: " + score;
-  timerHTML.textContent = "Time remaining: " + (timer - timePassed);
+  timeLeft = timer - timePassed
+  timerHTML.textContent = "Time remaining: " + timeLeft;
   document.body.insertBefore(scoreHTML, homeLink);
   document.body.insertBefore(timerHTML, homeLink);
   Canvas.removeEventListener("click",startGame);
@@ -347,8 +349,8 @@ function intro(){
 }
 
 var endgame = function(){
-  document.body.removeChild(scoreHTML);
-  document.body.removeChild(timerHTML);
+  scoreHTML.remove();
+  timerHTML.remove();
   CanvasContext.clearRect(0,0,Canvas.width,Canvas.height);
   function replay(event){
     if(event.clientX - CanvasRect.left >= 330 && event.clientX - CanvasRect.left <= 570 && event.clientY - CanvasRect.top >= 395 && event.clientY - CanvasRect.top <= 555){
