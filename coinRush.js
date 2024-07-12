@@ -137,9 +137,10 @@ var CanvasRect = Canvas.getBoundingClientRect();
 var CanvasContext = Canvas.getContext("2d");
 
 function intro(){
+  CanvasContext.strokeStyle = "black";
+  CanvasContext.fillStyle = "white";
   function homepage(){
-    CanvasContext.strokeStyle = "black";
-    CanvasContext.fillStyle = "white";
+    CanvasContext.clearRect(0,0,Canvas.width,Canvas.height);
     function homepageAdvance(event){
       if(event.clientX - CanvasRect.left >= 45 && event.clientX - CanvasRect.left <= 285 && event.clientY - CanvasRect.top >= 150 && event.clientY - CanvasRect.top <= 310){
         timer = 20;
@@ -183,6 +184,9 @@ function intro(){
   function credits(){
     CanvasContext.clearRect(0,0,Canvas.width,Canvas.height);
     function creditsAdvance(event){
+    if(event.clientX - CanvasRect.left >= 330 && event.clientX - CanvasRect.left <= 570 && event.clientY - CanvasRect.top >= 395 && event.clientY - CanvasRect.top <= 555){
+        homepage();
+      }
       Canvas.removeEventListener("click", creditsAdvance);
     }
     CanvasContext.strokeRect(330,395,240,160);
