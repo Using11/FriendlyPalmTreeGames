@@ -196,9 +196,17 @@ function intro(){
     Canvas.addEventListener("click", creditsAdvance);
   }
   function instructions(){
+    CanvasContext.clearRect(0,0,Canvas.width,Canvas.height);
     function instructionsAdvance(event){
+      if(event.clientX - CanvasRect.left >= 330 && event.clientX - CanvasRect.left <= 570 && event.clientY - CanvasRect.top >= 395 && event.clientY - CanvasRect.top <= 555){
+        homepage();
+      }
       Canvas.removeEventListener("click", instructionsAdvance);
     }
+    CanvasContext.strokeRect(330,395,240,160);
+    CanvasContext.fillStyle = "black";
+    CanvasContext.textAlign = "center";
+    CanvasContext.textBaseline = "middle";
     Canvas.addEventListener("click", instructionsAdvance);
   }
   homepage();
