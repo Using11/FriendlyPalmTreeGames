@@ -3,8 +3,7 @@ var startTime;
 var nowTime;
 var timer;
 var timeLeft;
-var creatureLen = 0;
-var creatures = [];
+var score = 0;
 
 var keys = {
   left : false,
