@@ -4,6 +4,7 @@ var nowTime;
 var timer;
 var timeLeft;
 var score;
+var coinsCollected;
 
 var keys = {
   left : false,
@@ -14,9 +15,10 @@ var keys = {
 
 var startGame = function(){
   score = 0;
+  coinsCollected = 0;
   Canvas.removeEventListener("click",startGame);
   startTime = new Date().getTime();
-  character = new component(120,120,20,20,true,"red");
+  character = new component(440,290,20,20,true,"red");
   coin = new component(200,200,10,10,false,"yellow");
   coinTeleport();
   gameCanvas.start();
@@ -145,8 +147,8 @@ class component{
     this.yMove = 0;
     this.touchingCoin = function(){
       if(this.x + 30 > coin.x && this.x - 10 < coin.x && this.y + 30 > coin.y && this.y - 10 < coin.y){
-        score++;
         coinTeleport();
+        coinsCollected += 1;
       }
     }
     this.move = function(){
@@ -346,9 +348,8 @@ var endgame = function(){
   CanvasContext.textAlgin = "center";
   CanvasContext.fillStyle = "black";
   CanvasContext.font = "45px Arial";
-  CanvasContext.fillText("You collected " + score + " coins in " + timer + " seconds",450,75);
-  score = score / timer;
-  score *= 1000;
+  CanvasContext.fillText("You collected " + coinsCollected + " coins in " + timer + " seconds",450,75);
+  score = coinsCollected / timer;
   CanvasContext.fillText("Your final score is:" + score,450,150);
   CanvasContext.textBaseline = "center";
   CanvasContext.fillText("Back",450,475);
