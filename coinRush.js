@@ -1,6 +1,8 @@
 var character;
 var startTime;
+var nowTime;
 var timer;
+var timeLeft;
 var creatureLen = 0;
 var creatures = [];
 
@@ -13,32 +15,52 @@ var keys = {
 
 var startGame = function(){
   Canvas.removeEventListener("click",startGame);
+  startTime = new Date().getTime();
   character = new component(120,120,20,20,true,"rgb(255 0 0 / 100%)");
   gameCanvas.start();
 }
 
 var updateGame = function(){
   gameCanvas.clear();
-  if(keys.left || keys.right || keys.up || keys.down){
-    if(keys.left){
-      character.xMove--;
+  nowTime = new Date().getTime();
+  timeLeft = nowTime - startTime;
+  timeLeft /= 1000;
+  timeLeft = Math.ceil(timeLeft);
+  if(timeLeft < timer){
+    if(keys.left || keys.right || keys.up || keys.down){
+      if(keys.left || keys.right){
+        if(keys.left){
+          character.xMove--;
+        }
+        if(keys.right){
+          character.xMove++;
+        }
+      }
+      else{
+        character.slowDownX();
+      }
+      if(keys.up || keys.down){
+        if(keys.up){
+          character.yMove--;
+        }
+        if(keys.down){
+          character.yMove++;
+        }
+      }
+      else{
+        character.slowDownY();
+      }
     }
-    if(keys.right){
-      character.xMove++;
+    else{
+      character.slowDown();
     }
-    if(keys.up){
-      character.yMove--;
-    }
-    if(keys.down){
-      character.yMove++;
-    }
+    character.move();
+    character.update();
+    paint();
   }
   else{
-    
+    endgame();
   }
-  character.move();
-  character.update();
-  paint();
 }
 
 var gameCanvas = {
@@ -101,6 +123,13 @@ class component{
     this.move = function(){
       this.x += this.xMove;
       this.y += this.yMove;
+    }
+    this.slowDownX = function(){
+      this.xMove /= 0.7;
+      this.xMove = Math.round(this.xMove);
+    }
+    this.slowDownY = function(){
+      
     }
     this.update = function(){
       this.build();
@@ -245,6 +274,10 @@ function intro(){
     Canvas.addEventListener("click", leaderboardAdvance);
   }
   homepage();
+}
+
+var endgame = function(){
+  
 }
 
 intro();
