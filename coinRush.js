@@ -15,7 +15,8 @@ var keys = {
 var startGame = function(){
   Canvas.removeEventListener("click",startGame);
   startTime = new Date().getTime();
-  character = new component(120,120,20,20,true,"rgb(255 0 0 / 100%)");
+  character = new component(120,120,20,20,true,"red");
+  coin = new component(200,200,15,15,false,"yellow");
   gameCanvas.start();
 }
 
