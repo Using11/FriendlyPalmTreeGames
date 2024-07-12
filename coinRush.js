@@ -3,7 +3,7 @@ var startTime;
 var nowTime;
 var timer;
 var timeLeft;
-var score = 0;
+var score;
 
 var keys = {
   left : false,
@@ -13,6 +13,7 @@ var keys = {
 }
 
 var startGame = function(){
+  score = 0;
   Canvas.removeEventListener("click",startGame);
   startTime = new Date().getTime();
   character = new component(120,120,20,20,true,"red");
@@ -332,7 +333,12 @@ function intro(){
 }
 
 var endgame = function(){
-  
+  Canvas.clearRect(0,0,Canvas.width,Canvas.height);
+  CanvasContext.textAlgin = "center";
+  CanvasContext.fillStyle = "black";
+  score = score / timer;
+  CanvasContext.font = "45px Arial";
+  CanvasContext.fillText("You collected " + score + " coins in " + timer + " seconds",450,75);
 }
 
 intro();
