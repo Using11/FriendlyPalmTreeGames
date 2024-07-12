@@ -55,6 +55,7 @@ var updateGame = function(){
       character.slowDownX();
       character.slowDownY();
     }
+    character.wallHit();
     character.move();
     character.update();
     paint();
@@ -125,19 +126,45 @@ class component{
       this.x += this.xMove;
       this.y += this.yMove;
     }
+    this.wallHit(){
+      if(this.x < 0){
+        this.x = 0;
+        this.xMove = 0;
+      }
+      else if(this.x > 590){
+        this.x = 590;
+        this.xMove = 0;
+      }
+      if(this.y < 0){
+        this.y = 0;
+        this.yMove = 0;
+      }
+      else if(this.y > 590){
+        this.y = 590;
+        this.yMove = 0;
+      }
+    }
     this.slowDownX = function(){
       if(this.xMove > 0){
-        this.xMove *= 0.7;
+        this.xMove *= 0.9;
         this.xMove = Math.floor(this.xMove);
       }
       else if(this.xMove < 0){
-        this.xMove *= -0.7;
+        this.xMove *= -0.9;
         this.xMove *= -1;
         this.xMove = Math.ceil(this.xMove);
       }
     }
     this.slowDownY = function(){
-      
+      if(this.yMove > 0){
+        this.yMove *= 0.9;
+        this.yMove = Math.floor(this.yMove);
+      }
+      else if(this.yMove < 0){
+        this.yMove *= -0.9;
+        this.yMove *= -1;
+        this.yMove = Math.ceil(this.yMove);
+      }
     }
     this.update = function(){
       this.build();
