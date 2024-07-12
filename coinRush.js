@@ -181,7 +181,8 @@ function intro(){
     CanvasContext.fillText("5m timer",735,230);
     CanvasContext.fillText("Credits",165,435);
     CanvasContext.fillText("Instructions",450,435);
-    CanvasContext.fillText("Leaderboard",735,435);
+    CanvasContext.fillText("Leader",735,413);
+    CanvasContext.fillText("board",735,457);
     Canvas.addEventListener("click",homepageAdvance);
   }
   function credits(){
@@ -197,8 +198,9 @@ function intro(){
     CanvasContext.textAlign = "center";
     CanvasContext.fillText("Credits:",450,75);
     CanvasContext.textBaseline = "middle";
-    CanvasContext.fillText("Using11 (creator / dev)",450,150);
-    CanvasContext.fillText("Github (platform)",450,225);
+    CanvasContext.fillText("Back",450,475);
+    CanvasContext.fillText("Using11 (creator / dev)",450,175);
+    CanvasContext.fillText("Github (platform)",450,250);
     Canvas.addEventListener("click", creditsAdvance);
   }
   function instructions(){
@@ -212,12 +214,14 @@ function intro(){
     CanvasContext.strokeRect(330,395,240,160);
     CanvasContext.fillStyle = "black";
     CanvasContext.textAlign = "center";
+    CanvasContext.font = "45px Arial";
     CanvasContext.fillText("Instructions:",450,75);
     CanvasContext.textBaseline = "middle";
-    CanvasContext.fillText("Use the arrow keys to move around your character",450,150);
-    CanvasContext.fillText("Collect as many coins as possible within the time limit",450,225);
-    CanvasContext.fillText("You can choose from 20 seconds, 1 minute, and 3 minute times",450,300);
-    CanvasContext.fillText("With enough coins, you can be featured on the leaderboard!",450,375);
+    CanvasContext.fillText("Back",450,475);
+    CanvasContext.fillText("Use the arrow keys to move around your character",450,175);
+    CanvasContext.fillText("Collect as many coins as possible within the time limit",450,250);
+    CanvasContext.fillText("You can choose from 20 seconds, 1 minute, and 3 minute times",450,325);
+    CanvasContext.fillText("With enough coins, you can be featured on the leaderboard!",450,400);
     Canvas.addEventListener("click", instructionsAdvance);
   }
   function leaderboard(){
@@ -228,12 +232,15 @@ function intro(){
       }
       Canvas.removeEventListener("click", leaderboardAdvance);
     }
+    CanvasContext.strokeRect(330,395,240,160);
     CanvasContext.fillStyle = "black";
     CanvasContext.textAlign = "center";
+    CanvasContext.font = "45px Arial";
     CanvasContext.fillText("Leaderboard:",450,75);
     CanvasContext.textBaseline = "middle";
-    CanvasContext.fillText("Coming soon...",450,150);
-    CanvasContext.fillText("Submit your score to qualify!",450,225);
+    CanvasContext.fillText("Back",450,475);
+    CanvasContext.fillText("Coming soon...",450,175);
+    CanvasContext.fillText("Submit your score to qualify!",450,250);
     Canvas.addEventListener("click", leaderboardAdvance);
   }
   homepage();
