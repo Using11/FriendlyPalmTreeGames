@@ -350,6 +350,8 @@ function intro(){
 }
 
 var endgame = function(){
+  character.xMove = 0;
+  character.yMove = 0;
   scoreHTML.remove();
   timerHTML.remove();
   CanvasContext.clearRect(0,0,Canvas.width,Canvas.height);
@@ -366,7 +368,7 @@ var endgame = function(){
   CanvasContext.fillStyle = "black";
   CanvasContext.font = "45px Arial";
   CanvasContext.fillText("You collected " + coinsCollected + " coins in " + timer + " seconds",450,75);
-  CanvasContext.fillText("Your final score is:" + score,450,150);
+  CanvasContext.fillText("Your final score is: " + score,450,150);
   CanvasContext.textBaseline = "center";
   CanvasContext.fillText("Back",450,475);
   Canvas.addEventListener("click", replay);
