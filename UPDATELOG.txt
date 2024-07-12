@@ -1,9 +1,9 @@
 Initial development start: 7/9/24
-Last major release: 7/9/24
+Last major release: 7/11/24
 Last update: 7/11/24
 
 Current update: 0.2.0-pre-alpha
-Update notes: Major progress on "Coin Rush" including movement and homescreen (broken as of now)
+Update notes: Added to "Coin Rush": movement, a homescreen including three time settings (20s, 1m, 3m), instructions, credits, and leaderboard (empty)
 
 Past updates:
 0.0.0-pre-alpha: Creation of "FriendlyPalmTreeGames", Main site created (more details to be added)
