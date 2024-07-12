@@ -218,10 +218,11 @@ function intro(){
     CanvasContext.fillText("Instructions:",450,75);
     CanvasContext.textBaseline = "middle";
     CanvasContext.fillText("Back",450,475);
-    CanvasContext.fillText("Use the arrow keys to move around your character",450,175);
-    CanvasContext.fillText("Collect as many coins as possible within the time limit",450,250);
-    CanvasContext.fillText("You can choose from 20 seconds, 1 minute, and 3 minute times",450,325);
-    CanvasContext.fillText("With enough coins, you can be featured on the leaderboard!",450,400);
+    CanvasContext.font = "35px Arial";
+    CanvasContext.fillText("Use the arrow keys to move around your character",450,150);
+    CanvasContext.fillText("Collect as many coins as possible within the time limit",450,225);
+    CanvasContext.fillText("You can choose from 20 seconds, 1 minute, and 3 minute times",450,300);
+    CanvasContext.fillText("With enough coins, you can be featured on the leaderboard!",450,375);
     Canvas.addEventListener("click", instructionsAdvance);
   }
   function leaderboard(){
