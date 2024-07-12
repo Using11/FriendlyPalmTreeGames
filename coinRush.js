@@ -57,6 +57,7 @@ var updateGame = function(){
     }
     character.move();
     character.wallHit();
+    coin.update();
     character.update();
     paint();
   }
