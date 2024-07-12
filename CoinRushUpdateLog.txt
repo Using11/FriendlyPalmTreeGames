@@ -3,7 +3,7 @@ Last major release: 7/12/24
 Last update: 7/12/24
 
 Current update: 0.3.0-alpha
-Update notes: Added to "Coin Rush": coins, score system, wall collision; mostly finished besides few bugs
+Update notes: Added to "Coin Rush": coins, score system, wall collision; "Finished", ready for alpha testing
 
 Past updates:
 0.0.0-pre-alpha: Started new game, "Coin Rush" (far from finished as of now), Fixed Main site display, Added more style to sites
