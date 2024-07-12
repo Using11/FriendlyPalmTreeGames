@@ -181,10 +181,11 @@ function intro(){
     Canvas.addEventListener("click",homepageAdvance);
   }
   function credits(){
+    CanvasContext.clearRect(0,0,Canvas.width,Canvas.height);
     function creditsAdvance(event){
       Canvas.removeEventListener("click", creditsAdvance);
     }
-    CanvasContext.strokeRect(330,500,240,160);
+    CanvasContext.strokeRect(330,395,240,160);
     CanvasContext.fillStyle = "black";
     CanvasContext.textAlign = "center";
     CanvasContext.textBaseline = "middle";
