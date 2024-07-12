@@ -5,6 +5,10 @@ var timer;
 var timeLeft;
 var score;
 var coinsCollected;
+var scoreHTML = document.createElement("p");
+scoreHTML.textContent = "Score: " + score;
+var timerHTML = document.createElement("p");
+timerHTML.textContent = "Time remaining: " + timer;
 
 var keys = {
   left : false,
@@ -16,6 +20,8 @@ var keys = {
 var startGame = function(){
   score = 0;
   coinsCollected = 0;
+  document.body.appendChild(scoreHTML);
+  document.body.appendChild(timerHTML);
   Canvas.removeEventListener("click",startGame);
   startTime = new Date().getTime();
   character = new component(440,290,20,20,true,"red");
@@ -64,6 +70,9 @@ var updateGame = function(){
     character.touchingCoin();
     coin.update();
     character.update();
+    score = coinsCollected / timer;
+    score *= 1000;
+    score = Math.floor(score);
     paint();
   }
   else{
@@ -349,9 +358,6 @@ var endgame = function(){
   CanvasContext.fillStyle = "black";
   CanvasContext.font = "45px Arial";
   CanvasContext.fillText("You collected " + coinsCollected + " coins in " + timer + " seconds",450,75);
-  score = coinsCollected / timer;
-  score *= 1000;
-  score = Math.floor(score);
   CanvasContext.fillText("Your final score is:" + score,450,150);
   CanvasContext.textBaseline = "center";
   CanvasContext.fillText("Back",450,475);
