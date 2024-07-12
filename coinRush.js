@@ -17,6 +17,7 @@ var startGame = function(){
   startTime = new Date().getTime();
   character = new component(120,120,20,20,true,"red");
   coin = new component(200,200,10,10,false,"yellow");
+  coinTeleport();
   gameCanvas.start();
 }
 
@@ -114,6 +115,23 @@ var gameCanvas = {
   }
 };
 
+function coinTeleport(){
+  coin.x = Math.random() * 900;
+  if(coin.x < 10){
+    coin.x = 10;
+    }
+  else if(coin.x > 890){
+    coin.x = 890
+  }
+  coin.y = Math.random() * 600;
+  if(coin.y < 10){
+    coin.y = 10;
+  }
+  else if(coin.y > 590){
+    coin.y = 590;
+  }
+}
+
 class component{
   constructor(x,y,width,height,rectBool,color){
     this.x = x;
@@ -127,7 +145,7 @@ class component{
     this.touchingCoin = function(){
       if(this.x + 30 > coin.x && this.x - 10 < coin.x && this.y + 30 > coin.y && this.y - 10 < coin.y){
         score++;
-        console.log(score);
+        coinTeleport();
       }
     }
     this.move = function(){
