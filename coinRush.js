@@ -193,7 +193,7 @@ function intro(){
     CanvasContext.fillStyle = "black";
     CanvasContext.textAlign = "center";
     CanvasContext.textBaseline = "middle";
-    CanvasContext.addEventListener("click", creditsAdvance);
+    Canvas.addEventListener("click", creditsAdvance);
   }
   function instructions(){
     function instructionsAdvance(event){
