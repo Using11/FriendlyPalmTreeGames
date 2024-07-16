@@ -100,3 +100,9 @@ function paint(){
     requestAnimationFrame(updateGame);
   }, 1000 / 30);
 }
+
+function intro(){
+  startGame();
+}
+
+intro();
