@@ -74,6 +74,12 @@ class component{
     this.width = width;
     this.height = height;
     this.color = color;
+    this.xMove = 0;
+    this.yMove = 0;
+    this.move = function(){
+      this.x += this.xMove;
+      this.y += this.yMove;
+    }
     this.update = function(){
       this.build();
     }
@@ -90,8 +96,11 @@ class component{
 
 class zombie extends component{
   constructor(x,y,width,height,color,speed){
-    super(x,y,width,height,color); 
+    super(x,y,width,height,color);
     this.speed = speed;
+    this.update = function(){
+      this.super.build();
+    }
   }
 }
 
