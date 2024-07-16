@@ -374,4 +374,4 @@ var endgame = function(){
   Canvas.addEventListener("click", replay);
 }
 
-//intro();
+intro();
