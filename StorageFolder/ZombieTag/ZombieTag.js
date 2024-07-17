@@ -86,17 +86,14 @@ class component{
       this.x += this.xMove;
       this.y += this.yMove;
     }
-    this.update = function(){
-      this.build();
+    this.update = function(){  
+      var context = gameCanvas.canvas.getContext("2d");
+      context.fillStyle = this.color;
+      context.strokeStyle = "black";
+      context.lineWidth = 2;
+      context.fillRect(this.x,this.y,this.width,this.height);
+      context.strokeRect(this.x,this.y,this.width,this.height);
     }
-  }
-  build(){
-    var context = gameCanvas.canvas.getContext("2d");
-    context.fillStyle = this.color;
-    context.strokeStyle = "black";
-    context.lineWidth = 2;
-    context.fillRect(this.x,this.y,this.width,this.height);
-    context.strokeRect(this.x,this.y,this.width,this.height);
   }
 }
 
@@ -104,9 +101,6 @@ class zombie extends component{
   constructor(x,y,width,height,color,speed){
     super(x,y,width,height,color);
     this.speed = speed;
-    this.update = function(){
-      this.super.build();
-    }
   }
 }
 
