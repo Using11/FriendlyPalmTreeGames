@@ -19,7 +19,37 @@ var startGame = function(){
 
 var updateGame = function(){
   gameCanvas.clear();
+  if(keys.left || keys.right || keys.up || keys.down){
+    if(keys.left || keys.right){
+      if(keys.left){
+        character.xMove--;
+      }
+      if(keys.right){
+        character.xMove++;
+      }
+    }
+    else {
+      character.slowDownX();
+    }
+    if(keys.up || keys.down){
+      if(keys.up){
+        character.yMove--;
+      }
+      if(keys.down){
+        character.yMove++;
+      }
+    }
+    else {
+      character.slowDownY();
+    }
+  }
+  else {
+    character.slowDownX();
+    character.slowDownY();
+  }
   character.update();
+  character.move();
+  character.wallHit();
   for(var i = 0; i <= zombIndex; i++){
     zombies[i].update();
   }
@@ -82,6 +112,40 @@ class component{
     this.color = color;
     this.xMove = 0;
     this.yMove = 0;
+    this.wallHit = function(){
+      if(this.x < 1){
+        this.x = 1;
+        this.xMove = 0;
+      }
+      else if(this.x > 879){
+        this.x = 879;
+        this.xMove = 0;
+      }
+      if(this.y < 1){
+        this.y = 1;
+        this.yMove = 0;
+      }
+      else if(this.y > 579){
+        this.y = 579;
+        this.yMove = 0;
+      }
+    }
+    this.slowDownX = function(){
+      if(this.xMove > 0){
+        this.xMove--;
+      }
+      else if(this.xMove < 0){
+        this.xMove++;
+      }
+    }
+    this.slowDownY = function(){
+      if(this.yMove > 0){
+        this.yMove--;
+      }
+      else if(this.yMove < 0){
+        this.yMove++;
+      }
+    }
     this.move = function(){
       this.x += this.xMove;
       this.y += this.yMove;
