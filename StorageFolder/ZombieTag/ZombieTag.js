@@ -51,6 +51,7 @@ var updateGame = function(){
   character.move();
   character.wallHit();
   for(var i = 0; i <= zombIndex; i++){
+    zombies[i].chasePlayer();
     zombies[i].update();
   }
   paint();
@@ -165,6 +166,14 @@ class zombie extends component{
   constructor(x,y,width,height,color,speed){
     super(x,y,width,height,color);
     this.speed = speed;
+    this.distX = 0;
+    this.distY = 0;
+    this.distance = 0;
+    this.chasePlayer = function(){
+      this.distX = Math.abs(character.x - (this.x + 10));
+      this.distY = Math.abs(character.y - (this.y + 10));
+      console.log(this.distX,this.distY);
+    }
   }
 }
 
