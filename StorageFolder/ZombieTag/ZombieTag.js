@@ -1,6 +1,8 @@
 var character;
 var score;
 var time;
+var zombIndex = 0;
+var zombies = [];
 
 var keys = {
   left : false,
@@ -11,12 +13,16 @@ var keys = {
 
 var startGame = function(){
   character = new component(100,100,20,20,"red");
+  zombies[0] = new zombie(500,300,20,20,"rgb(100 100 100 / 100%)",5);
   gameCanvas.start();
 }
 
 var updateGame = function(){
   gameCanvas.clear();
   character.update();
+  for(var i = 0; i <= zombIndex; i++){
+    zombies[i].update();
+  }
   paint();
 }
 
