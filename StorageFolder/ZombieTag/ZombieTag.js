@@ -165,8 +165,9 @@ class component{
 class zombie extends component{
   constructor(x,y,width,height,color,speed){
     super(x,y,width,height,color);
-    super(xMove,yMove);
     this.speed = speed;
+    this.xMove = 0;
+    this.yMove = 0;
     this.distX = 0;
     this.distY = 0;
     this.distance = 0;
