@@ -15,7 +15,6 @@ var keys = {
 
 var startGame = function(){
   character = new component(100,100,20,20,"red");
-  zombies[0] = new zombie(440,290,20,20,"rgb(100 100 100 / 100%)",5);
   startTime = new Date().getTime();
   gameCanvas.start();
 }
@@ -52,18 +51,27 @@ var updateGame = function(){
     character.slowDownX();
     character.slowDownY();
   }
-  character.update();
   character.move();
   character.wallHit();
-  if(zombies.length * 10 <= time){
+  if(time > 3 && zombies.length == 0){
+    zombies[0] = new zombie(440,290,20,20,"rgb(100 100 100 / 100%)",3);
+  }
+  if(time - 3 >= zombies.length * 10 && zombIndex > 0){
     zombIndex++;
-    zombies[zombIndex] = new zombie(440,290,20,20,"rgb(100 100 100 / 100%)",5);
+    zombies[zombIndex] = new zombie(440,290,20,20,"rgb(100 100 100 / 100%)",3);
   }
   for(var i = 0; i <= zombIndex; i++){
     zombies[i].chasePlayer();
     zombies[i].update();
   }
-  paint();
+  character.touchingZombie();
+  character.update();
+  if(!character.alive){
+    endgame();
+  }
+  else{
+    paint();
+  }
 }
 
 var gameCanvas = {
@@ -122,6 +130,7 @@ class component{
     this.color = color;
     this.xMove = 0;
     this.yMove = 0;
+    this.alive = true;
     this.wallHit = function(){
       if(this.x < 1){
         this.x = 1;
@@ -160,6 +169,17 @@ class component{
       this.x += this.xMove;
       this.y += this.yMove;
     }
+    this.touchingZombie = function(){
+      for(var i = 0;i =< zombIndex){
+        if(this.x >= zombies[zombIndex].x + zombies[zombIndex].width && this.x + this.width <= zombies[zombIndex].x && this.y >= zombies[zombIndex].y + zombies[zombIndex].height && this.x + this.height <= zombies[zombIndex].y){
+          this.alive = false;
+          break;
+        }
+      }
+      if(!this.alive){
+        endgame();
+      }
+    }
     this.update = function(){  
       var context = gameCanvas.canvas.getContext("2d");
       context.fillStyle = this.color;
@@ -179,7 +199,6 @@ class zombie extends component{
     this.yMove = 0;
     this.distX = 0;
     this.distY = 0;
-    this.touchingPlayer = false;
     this.chasePlayer = function(){
       this.distX = Math.abs(character.x - this.x);
       this.distY = Math.abs(character.y - this.y);
@@ -193,9 +212,6 @@ class zombie extends component{
       }
       this.x += this.xMove;
       this.y += this.yMove;
-    }
-    this.checkPlayerTouch = function(){
-      
     }
   }
 }
@@ -339,7 +355,7 @@ var endgame = function(){
   CanvasContext.textAlgin = "center";
   CanvasContext.fillStyle = "black";
   CanvasContext.font = "45px Arial";
-  CanvasContext.fillText("You collected " + coinsCollected + " coins in " + timer + " seconds",450,75);
+  CanvasContext.fillText("You survived seconds",450,75);
   CanvasContext.fillText("Your final score is: " + score,450,150);
   CanvasContext.textBaseline = "center";
   CanvasContext.fillText("Back",450,475);
