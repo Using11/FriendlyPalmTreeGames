@@ -55,7 +55,7 @@ var updateGame = function(){
   character.update();
   character.move();
   character.wallHit();
-  if(zombies.length * 10 >= time){
+  if(zombies.length * 10 <= time){
     zombIndex++;
     zombies[zombIndex] = new zombie(440,290,20,20,"rgb(100 100 100 / 100%)",5);
   }
