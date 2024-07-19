@@ -165,6 +165,7 @@ class component{
 class zombie extends component{
   constructor(x,y,width,height,color,speed){
     super(x,y,width,height,color);
+    super(xMove,yMove);
     this.speed = speed;
     this.distX = 0;
     this.distY = 0;
@@ -175,8 +176,12 @@ class zombie extends component{
       this.distY = Math.abs(character.y - (this.y + 10));
       this.distance = Math.sqrt((this.distX**2) + (this.distY**2));
       this.distRatio = [this.distX,this.distY];
-      
       console.log(this.distX,this.distY);
+      this.xMove = Math.ceil(Math.sqrt(distX));
+      if((character.x - (this.x + 10)) < 0){
+        this.xMove *= -1;
+      }
+      this.x += this.xMove;
     }
   }
 }
