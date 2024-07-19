@@ -178,7 +178,7 @@ class zombie extends component{
       this.distance = Math.sqrt((this.distX**2) + (this.distY**2));
       this.distRatio = [this.distX,this.distY];
       console.log(this.distX,this.distY);
-      this.xMove = Math.ceil(Math.sqrt(this.distX));
+      this.xMove = Math.ceil(Math.sqrt(this.distX) / 30) * this.speed;
       if(character.x - this.x < 0){
         this.xMove *= -1;
       }
