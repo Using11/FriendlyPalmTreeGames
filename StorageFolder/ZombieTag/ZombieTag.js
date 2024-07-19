@@ -3,6 +3,8 @@ var score;
 var time;
 var zombIndex = 0;
 var zombies = [];
+var startTime;
+var currTime;
 
 var keys = {
   left : false,
@@ -13,12 +15,15 @@ var keys = {
 
 var startGame = function(){
   character = new component(100,100,20,20,"red");
-  zombies[0] = new zombie(500,300,20,20,"rgb(100 100 100 / 100%)",5);
+  zombies[0] = new zombie(440,290,20,20,"rgb(100 100 100 / 100%)",5);
+  startTime = new Date().getTime();
   gameCanvas.start();
 }
 
 var updateGame = function(){
   gameCanvas.clear();
+  currTime = new Date().getTime();
+  time = (currTime - startTime) / 1000;
   if(keys.left || keys.right || keys.up || keys.down){
     if(keys.left || keys.right){
       if(keys.left){
@@ -50,6 +55,10 @@ var updateGame = function(){
   character.update();
   character.move();
   character.wallHit();
+  if(zombIndex.length * 10 >= time){
+    zombIndex++;
+    zombies[zombIndex] = new zombie(440,290,20,20,"rgb(100 100 100 / 100%)",5);
+  }
   for(var i = 0; i <= zombIndex; i++){
     zombies[i].chasePlayer();
     zombies[i].update();
