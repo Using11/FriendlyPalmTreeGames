@@ -194,6 +194,9 @@ class zombie extends component{
       this.x += this.xMove;
       this.y += this.yMove;
     }
+    this.checkPlayerTouch = function(){
+      
+    }
   }
 }
 
