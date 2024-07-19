@@ -344,8 +344,6 @@ function intro(){
 var endgame = function(){
   character.xMove = 0;
   character.yMove = 0;
-  scoreHTML.remove();
-  timerHTML.remove();
   CanvasContext.clearRect(0,0,Canvas.width,Canvas.height);
   function replay(event){
     if(event.clientX - CanvasRect.left >= 330 && event.clientX - CanvasRect.left <= 570 && event.clientY - CanvasRect.top >= 395 && event.clientY - CanvasRect.top <= 555){
