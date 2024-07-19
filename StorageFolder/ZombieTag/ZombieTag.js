@@ -173,13 +173,13 @@ class zombie extends component{
     this.distance = 0;
     this.distRatio = [];
     this.chasePlayer = function(){
-      this.distX = Math.abs(character.x - (this.x + 10));
-      this.distY = Math.abs(character.y - (this.y + 10));
+      this.distX = Math.abs(character.x - this.x);
+      this.distY = Math.abs(character.y - this.y);
       this.distance = Math.sqrt((this.distX**2) + (this.distY**2));
       this.distRatio = [this.distX,this.distY];
       console.log(this.distX,this.distY);
       this.xMove = Math.ceil(Math.sqrt(this.distX));
-      if((character.x - (this.x + 10)) < 0){
+      if(character.x - this.x < 0){
         this.xMove *= -1;
       }
       this.x += this.xMove;
