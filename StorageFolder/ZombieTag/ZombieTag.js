@@ -179,7 +179,7 @@ class zombie extends component{
       if(character.x - this.x < 0){
         this.xMove *= -1;
       }      
-      if(character.y - this.x < 0){
+      if(character.y - this.y < 0){
         this.yMove *= -1;
       }
       this.x += this.xMove;
