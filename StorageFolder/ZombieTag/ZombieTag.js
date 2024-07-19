@@ -66,7 +66,9 @@ var updateGame = function(){
       zombies[i].update();
     }
   }
-  character.touchingZombie();
+  if(zombies.length > 0){
+    character.touchingZombie();
+  }
   character.update();
   if(!character.alive){
     endgame();
