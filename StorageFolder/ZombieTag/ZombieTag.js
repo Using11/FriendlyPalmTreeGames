@@ -60,9 +60,11 @@ var updateGame = function(){
     zombIndex++;
     zombies[zombIndex] = new zombie(440,290,20,20,"rgb(100 100 100 / 100%)",3);
   }
-  for(var i = 0; i <= zombIndex; i++){
-    zombies[i].chasePlayer();
-    zombies[i].update();
+  if(zombIndex > 0){
+    for(var i = 0; i <= zombIndex; i++){
+      zombies[i].chasePlayer();
+      zombies[i].update();
+    }
   }
   character.touchingZombie();
   character.update();
