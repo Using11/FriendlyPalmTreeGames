@@ -53,12 +53,12 @@ var updateGame = function(){
   }
   character.move();
   character.wallHit();
-  if(time > 3 && zombies.length == 0){
-    zombies[0] = new zombie(440,290,20,20,"rgb(100 100 100 / 100%)",3);
-  }
-  if(time - 3 >= zombies.length * 10 && zombIndex > 0){
+  if(time - 3 >= zombies.length * 10 && zombies.length > 0){
     zombIndex++;
     zombies[zombIndex] = new zombie(440,290,20,20,"rgb(100 100 100 / 100%)",3);
+  }  
+  else if(time > 3 && zombies.length == 0){
+    zombies[0] = new zombie(440,290,20,20,"rgb(100 100 100 / 100%)",3);
   }
   if(zombIndex > 0){
     for(var i = 0; i <= zombIndex; i++){
