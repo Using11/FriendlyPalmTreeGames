@@ -70,7 +70,7 @@ var updateGame = function(){
     character.touchingZombie();
   }
   character.update();
-  if(!character.alive){
+  if(character.alive == false){
     endgame();
   }
   else{
