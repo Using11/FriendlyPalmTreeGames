@@ -75,8 +75,8 @@ var updateGame = function(){
     CanvasContext.textBaseline = "center";
     CanvasContext.fillStyle = "black";
     CanvasContext.font = "45px Arial";
-    CanvasContext.fillText("Score: " + score,20,35);
-    CanvasContext.fillText("Time Left: " + timeLeft,20,85);
+    CanvasContext.fillText("Score: " + score,12,35);
+    CanvasContext.fillText("Time Left: " + timeLeft,12,85);
     paint();
   }
   else{
