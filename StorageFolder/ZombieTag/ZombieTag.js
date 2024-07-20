@@ -172,7 +172,7 @@ class component{
       this.y += this.yMove;
     }
     this.touchingZombie = function(){
-    if(zombies.length > 0){  
+      if(zombies.length > 0){  
         for(var i = 0;i < zombies.length;i++){
           if(this.x >= zombies[i].x + zombies[i].width && this.x + this.width <= zombies[i].x && this.y >= zombies[i].y + zombies[i].height && this.x + this.height <= zombies[i].y){
             this.alive = false;
@@ -180,7 +180,7 @@ class component{
             break;
           }
         }
-    }
+      }
       if(!this.alive){
         endgame();
       }
