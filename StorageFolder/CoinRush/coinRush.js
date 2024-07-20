@@ -79,6 +79,12 @@ var updateGame = function(){
     score = coinsCollected / timer;
     score *= 1000;
     score = Math.floor(score);
+    CanvasContext.textAlign = "left";
+    CanvasContext.textBaseline = "center";
+    CanvasContext.fillStyle = "black";
+    CanvasContext.font = "45px Arial";
+    CanvasContext.fillText("Score: " + score,0,35);
+    CanvasContext.fillText("Time Left: " + timeLeft,0,85);
     paint();
   }
   else{
