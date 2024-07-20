@@ -66,9 +66,7 @@ var updateGame = function(){
       zombies[i].update();
     }
   }
-  if(zombies.length > 0){
-    character.touchingZombie();
-  }
+  character.touchingZombie();
   character.update();
   if(character.alive == false){
     endgame();
@@ -174,13 +172,15 @@ class component{
       this.y += this.yMove;
     }
     this.touchingZombie = function(){
-      for(var i = 0;i < zombies.length;i++){
-        if(this.x >= zombies[i].x + zombies[i].width && this.x + this.width <= zombies[i].x && this.y >= zombies[i].y + zombies[i].height && this.x + this.height <= zombies[i].y){
-          this.alive = false;
-          console.log("ded");
-          break;
+    if(zombies.length > 0){  
+        for(var i = 0;i < zombies.length;i++){
+          if(this.x >= zombies[i].x + zombies[i].width && this.x + this.width <= zombies[i].x && this.y >= zombies[i].y + zombies[i].height && this.x + this.height <= zombies[i].y){
+            this.alive = false;
+            console.log("ded");
+            break;
+          }
         }
-      }
+    }
       if(!this.alive){
         endgame();
       }
@@ -238,15 +238,12 @@ function intro(){
     CanvasContext.clearRect(0,0,Canvas.width,Canvas.height);
     function homepageAdvance(event){
       if(event.clientX - CanvasRect.left >= 45 && event.clientX - CanvasRect.left <= 285 && event.clientY - CanvasRect.top >= 150 && event.clientY - CanvasRect.top <= 310){
-        //timer = 20;
         startGame();
       }
       else if(event.clientX - CanvasRect.left >= 330 && event.clientX - CanvasRect.left <= 570 && event.clientY - CanvasRect.top >= 150 && event.clientY - CanvasRect.top <= 310){
-        //timer = 60;
         startGame();
       }
       else if(event.clientX - CanvasRect.left >= 615 && event.clientX - CanvasRect.left <= 855 && event.clientY - CanvasRect.top >= 150 && event.clientY - CanvasRect.top <= 310){
-        //timer = 180;
         startGame();
       }
       else if(event.clientX - CanvasRect.left >= 45 && event.clientX - CanvasRect.left <= 285 && event.clientY - CanvasRect.top >= 355 && event.clientY - CanvasRect.top <= 515){
