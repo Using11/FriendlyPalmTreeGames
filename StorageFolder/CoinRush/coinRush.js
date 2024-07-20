@@ -75,8 +75,8 @@ var updateGame = function(){
     CanvasContext.textBaseline = "center";
     CanvasContext.fillStyle = "black";
     CanvasContext.font = "45px Arial";
-    CanvasContext.fillText("Score: " + score,0,35);
-    CanvasContext.fillText("Time Left: " + timeLeft,0,85);
+    CanvasContext.fillText("Score: " + score,20,35);
+    CanvasContext.fillText("Time Left: " + timeLeft,20,85);
     paint();
   }
   else{
@@ -87,7 +87,7 @@ var updateGame = function(){
 var gameCanvas = {
   canvas : document.getElementById("CoinRush"),
   start : function(){
-    this.context = this.canvas.getContext("2d");
+    this.context = CanvasContext;
     this.animation = paint();
     updateGame();
     window.addEventListener("keydown", function(event){
