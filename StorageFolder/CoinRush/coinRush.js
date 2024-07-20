@@ -6,8 +6,6 @@ var timePassed;
 var timeLeft;
 var score;
 var coinsCollected;
-var scoreHTML = document.createElement("h2");
-var timerHTML = document.createElement("h2");
 var homeLink = document.getElementsByTagName("a")[0];
 
 var keys = {
@@ -20,11 +18,7 @@ var keys = {
 var startGame = function(){
   score = 0;
   coinsCollected = 0;
-  scoreHTML.textContent = "Score: " + score;
   timeLeft = timer - timePassed;
-  timerHTML.textContent = "Time remaining: " + timeLeft;
-  document.body.insertBefore(scoreHTML, homeLink);
-  document.body.insertBefore(timerHTML, homeLink);
   Canvas.removeEventListener("click",startGame);
   startTime = new Date().getTime();
   character = new component(440,290,20,20,true,"red");
@@ -36,8 +30,6 @@ var startGame = function(){
 var updateGame = function(){
   gameCanvas.clear();
   timeLeft = timer - timePassed;
-  scoreHTML.textContent = "Score: " + score;
-  timerHTML.textContent = "Time remaining: " + timeLeft;
   nowTime = new Date().getTime();
   timePassed = nowTime - startTime;
   timePassed /= 1000;
@@ -356,10 +348,9 @@ function intro(){
 }
 
 var endgame = function(){
+  CanvasContext.textAlign = "center";
   character.xMove = 0;
   character.yMove = 0;
-  scoreHTML.remove();
-  timerHTML.remove();
   CanvasContext.clearRect(0,0,Canvas.width,Canvas.height);
   function replay(event){
     if(event.clientX - CanvasRect.left >= 330 && event.clientX - CanvasRect.left <= 570 && event.clientY - CanvasRect.top >= 395 && event.clientY - CanvasRect.top <= 555){
