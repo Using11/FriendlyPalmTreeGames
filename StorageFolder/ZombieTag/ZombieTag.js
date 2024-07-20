@@ -53,7 +53,7 @@ var updateGame = function(){
   }
   character.move();
   character.wallHit();
-  if(time - 3 >= zombies.length * 10 && zombies[0]){
+  if(time - 3 >= (zombIndex + 1) * 10 && zombies[0]){
     zombIndex++;
     zombies[zombIndex] = new zombie(440,290,20,20,"rgb(100 100 100 / 100%)",3);
   }  
