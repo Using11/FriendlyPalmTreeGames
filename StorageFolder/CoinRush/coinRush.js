@@ -124,7 +124,7 @@ var gameCanvas = {
     }, false);
   },
   clear : function(){
-    CanvasContext.clearRect(0,0,this.canvas.width,this.canvas.height);
+    CanvasContext.clearRect(0,0,Canvas.width,Canvas.height);
   }
 };
 
