@@ -204,21 +204,20 @@ class component{
     } 
   }
   build(){
-    var context = gameCanvas.canvas.getContext("2d");
-    context.fillStyle = this.color;
-    context.strokeStyle = "black";
-    context.lineWidth = 2;
+    CanvasContext.fillStyle = this.color;
+    CanvasContext.strokeStyle = "black";
+    CanvasContext.lineWidth = 2;
     if(this.rectBool){
-      context.fillRect(this.x,this.y,this.width,this.height);
-      context.strokeRect(this.x,this.y,this.width,this.height);
+      CanvasContext.fillRect(this.x,this.y,this.width,this.height);
+      CanvasContext.strokeRect(this.x,this.y,this.width,this.height);
     }
     else{
-      context.beginPath();
-      context.arc(this.x,this.y,this.width,this.height,360);
-      context.fill();
-      context.arc(this.x,this.y,this.width,this.height,360);
-      context.stroke();
-      context.closePath();
+      CanvasContext.beginPath();
+      CanvasContext.arc(this.x,this.y,this.width,this.height,360);
+      CanvasContext.fill();
+      CanvasContext.arc(this.x,this.y,this.width,this.height,360);
+      CanvasContext.stroke();
+      CanvasContext.closePath();
     }
   }
 }
