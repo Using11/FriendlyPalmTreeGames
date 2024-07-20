@@ -1,6 +1,6 @@
 Initial development start: 7/9/24
 Last major release: 7/12/24
-Last update: 7/16/24
+Last update: 7/20/24
 
 Current update: 0.3.2-pre-alpha
 Update notes: "Coin Rush": Minor code clean up, Made score and time easier to see; Alpha testing finished, ready for beta testing; "Zombie Tag": Added zombies, movement, wall collision and score (not yet visible); game is overall very buggy
